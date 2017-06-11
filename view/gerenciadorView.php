@@ -14,6 +14,7 @@
 
 	<?php
 		include ("../controller/renamePages.php");
+		include_once ("../model/Caminhao.php");
 		include_once ("../model/CodificacaoPaginas.php");
 		include_once ("../util/VetorLista.php");
 		include_once ("../model/Item.php");
@@ -30,6 +31,12 @@
 		if(isset($_SESSION['VetorLista']) == false)
 			$_SESSION['VetorLista'] = array(new VetorLista(), new VetorLista());
 
+		if($_SESSION['VetorLista'][0] -> size() <= 0){
+			include ("../controller/medidasCaminhaoContainer.php");
+			for($position = 0; $position < 3; $position += 1)
+				$_SESSION['VetorLista'][0] -> add(new Caminhao(getVolume($conteineres[$position]), $conteineres[$position], getConsumoCaminhao($caminhoes[$position]), $caminhoes[$position]));
+		}
+
 		if(!isset($_GET['selectPage'])){
 			$paginaDestino = $_SESSION['paginaAnterior'];
 		}
@@ -39,8 +46,8 @@
 
 		$_SESSION['navbarSelected'] = $paginaDestino;
 		$_SESSION['CodificacaoPaginas'] -> associaCodificacaoPagina();
-		deletaPaginaCopia();
-		copiaPaginas();
+		/*deletaPaginaCopia();
+		copiaPaginas();*/
 
 	?>
 

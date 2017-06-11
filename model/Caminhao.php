@@ -24,6 +24,10 @@
 			return $this -> modeloCaminhao;
 		}
 
+		public function getModeloContainer(){
+			return $this -> modeloContainer;
+		}
+
 		public function setVolumeBau($VolumeBauReceived){
 			$this -> volumeBau = $VolumeBauReceived;
 		}
@@ -34,6 +38,10 @@
 
 		public function setModeloCaminhao($ModeloCaminhaoReceived){
 			$this -> modeloCaminhao = $ModeloCaminhaoReceived;
+		}
+
+		public function setModeloContainer($modeloContainerReceived){
+			$this -> modeloContainer = $modeloContainerReceived;
 		}
 
 	}

@@ -2,12 +2,14 @@
 	$_SESSION['paginaAnterior'] = "insereItens.php";
 ?>
 
-<div class"container">
+<div class = "container">
 	<div class="row">
-		<div class="col-md-3"></div>
-		<div class="col-md-6">
+		<div class="col-md-1"></div>
+		<div class="col-md-10">
 			<div class="panel panel-default">
 				<div class="panel-body">
+					<span class="input-group-addon" id="basic-addon1">Nome Item</span>
+					<input type="text" name="nomeItem" placeholder="Nome Item" class="form-control" aria-describedby="basic-addon1"><br/>
 					<form method="post" action="../controller/gerenciaControle.php">
 						<span class="input-group-addon" id="basic-addon1">Descricao</span>
 						<textarea class="form-control" rows="5" name="descricao" aria-describedby="basic-addon1"></textarea>
@@ -36,6 +38,6 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-md-3"></div>
+		<div class="col-md-1"></div>
 	</div>
 </div>
