@@ -22,7 +22,7 @@
 			$capsLock = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 			$caracteres = "abcdefghijklmnopqrstuvwxyz";
 			$numeros = "0123456789";
-			$simbolos = "!@$^*_=-/.";
+			$simbolos = "!@$^_=-.";/* /* */
 			$semente = str_split($capsLock.$caracteres.$numeros.$simbolos);
 
 			for ($position = 0; $position < $tamanhoRetorno; $position += 1) { 
@@ -70,6 +70,14 @@
 			if($position < 0 || $position >= count($this -> codigos))
 				return $this -> codigos[0];
 			return $this -> codigos[$position];
+		}
+
+		public function getChave($pagina){
+			for($position = 0; $position < count($this -> paginasExistentes); $position += 1){
+				if($this -> paginasChaves[$this -> codigos[$position]] == $pagina)
+					return $this -> codigos[$position];
+			}
+			return $this -> codigos[0];
 		}
 	}
 ?>
