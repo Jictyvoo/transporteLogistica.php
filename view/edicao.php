@@ -14,8 +14,7 @@
 						<input type="text" name="nomeItem" placeholder="Nome Item" class="form-control" aria-describedby="basic-addon1"
 						 value="<?php echo $itemEditado -> getNome(); ?>" required/><br/>
 						<span class="input-group-addon" id="basic-addon1">Descricao</span>
-						<textarea class="form-control" rows="5" name="descricao" aria-describedby="basic-addon1"
-						 value="<?php echo $itemEditado -> getDescricao(); ?>"></textarea>
+						<textarea class="form-control" rows="5" name="descricao" aria-describedby="basic-addon1" placeholder="(Sem Descrição)"><?php if($itemEditado -> getDescricao() != "(Sem Descrição)") echo $itemEditado -> getDescricao(); ?></textarea>
 						<br/>
 						<span class="input-group-addon" id="basic-addon1">Destinatario</span>
 						<input type="text" name="destinatario" placeholder="Nome Destinatario" class="form-control" aria-describedby="basic-addon1"

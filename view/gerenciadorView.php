@@ -7,7 +7,7 @@
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">	
 	<link rel="stylesheet" type="text/css" href="css/fonts.css">	
 	<link rel="stylesheet" type="text/css" href="css/definitions.css">
-
+	
 	<link rel="icon" href="imagens/favicon.ico">
 </head>
 <body>

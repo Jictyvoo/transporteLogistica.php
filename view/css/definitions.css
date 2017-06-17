@@ -27,6 +27,10 @@ h2 {
 	color: #069;
 }
 
+textarea {
+	resize: none;
+}
+
 input, textarea {
 	font-family: "Georgia, "Times New Roman", Times, serif";
 	font-size: 13px;
