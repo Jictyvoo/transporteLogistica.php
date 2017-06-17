@@ -19,6 +19,7 @@
 		include_once ("../util/VetorLista.php");
 		include_once ("../model/Item.php");
 		session_start();
+		//session_destroy();
 		if(!isset($_SESSION['navbarSelected']))
 			$_SESSION['navbarSelected'] = "selecaoCaminhao.php";
 
@@ -26,7 +27,7 @@
 			$_SESSION['paginaAnterior'] = "selecaoCaminhao.php";
 
 		if(isset($_SESSION['CodificacaoPaginas']) == false)
-			$_SESSION['CodificacaoPaginas'] = new CodificacaoPaginas();
+			$_SESSION['CodificacaoPaginas'] = new CodificacaoPaginas(array("selecaoCaminhao.php", "insereItens.php", "itensInseridos.php", "resultPage.php", "edicao.php"));
 
 		if(isset($_SESSION['VetorLista']) == false)
 			$_SESSION['VetorLista'] = array(new VetorLista(), new VetorLista());
@@ -64,7 +65,7 @@
 				<li class = "<?php echo $_SESSION['navbarSelected'] == 'insereItens.php' ? 'active' : ''; ?>">
 					<a href = "gerenciadorView.php?selectPage=<?= $_SESSION['CodificacaoPaginas'] -> getCodigos(1) ?>">Inserir Itens</a>
 				</li>
-				<li class = "<?php echo $_SESSION['navbarSelected'] == 'itensInseridos.php' ? 'active' : ''; ?>">
+				<li class = "<?php echo $_SESSION['navbarSelected'] == 'itensInseridos.php' ? 'active' : $_SESSION['navbarSelected'] == 'edicao.php' ? 'active' : ''; ?>">
 					<a href = "gerenciadorView.php?selectPage=<?= $_SESSION['CodificacaoPaginas'] -> getCodigos(2) ?>">Itens Inseridos</a>
 				</li>
 				<li class = "<?php echo $_SESSION['navbarSelected'] == 'resultPage.php' ? 'active' : ''; ?>">
@@ -88,6 +89,9 @@
 				break;
 			case "resultPage.php":
 				include("resultPage.php");
+				break;
+			case "edicao.php":
+				include("edicao.php");
 				break;
 			
 			default:

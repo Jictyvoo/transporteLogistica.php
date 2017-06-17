@@ -3,14 +3,17 @@
 		private $nome;
 		private $descricao;
 		private $volume;
+		private $quantidade;
 		private $destino;
 		private $nomeEmpresa;
 		private $bairroDestino;
 		private $distancia;
 
-		public function __construct($descricaoReceived, $volumeReceived, $destinoReceived/*, $nomeEmpresaReceived*/, $bairroDestinoReceived/*, $distanciaReceived*/){
+		public function __construct($nomeReceived, $descricaoReceived, $volumeReceived, $quantidadeReceived, $destinoReceived/*, $nomeEmpresaReceived*/, $bairroDestinoReceived/*, $distanciaReceived*/){
+			$this -> nome = $nomeReceived;
 			$this -> descricao = $descricaoReceived;
 			$this -> volume = $volumeReceived;
+			$this -> quantidade = $quantidadeReceived;
 			$this -> destino = $destinoReceived;
 			/*$this -> nomeEmpresa = $nomeEmpresaReceived;*/
 			$this -> bairroDestino = $bairroDestinoReceived;
@@ -23,6 +26,10 @@
 
 		public function getVolume(){
 			return $this -> volume;
+		}
+
+		public function getQuantidade(){
+			return $this -> quantidade;
 		}
 
 		public function getDestino(){
@@ -51,6 +58,10 @@
 
 		public function setVolume($volumeReceived){
 			$this -> volume = $volumeReceived;
+		}
+
+		public function setQuantidade($quantidadeReceived){
+			$this -> quantidade = $quantidadeReceived;
 		}
 
 		public function setDestino($destinoReceived){

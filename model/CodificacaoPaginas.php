@@ -7,10 +7,10 @@
 		private $paginasExistentes;
 		private $jaUsado;
 
-		public function __construct() {
+		public function __construct($receivedArray) {
 			$this -> jaUsado = false;
 
-			$this -> paginasExistentes = array("selecaoCaminhao.php", "insereItens.php", "itensInseridos.php", "resultPage.php");
+			$this -> paginasExistentes = $receivedArray;
 			for($position = 0; $position < count($this -> paginasExistentes); $position += 1)
 				$this -> codigos[$position] = $this -> nomeCodificado();
 		}

@@ -8,21 +8,21 @@
 		<div class="col-md-10">
 			<div class="panel panel-default">
 				<div class="panel-body">
-					<span class="input-group-addon" id="basic-addon1">Nome Item</span>
-					<input type="text" name="nomeItem" placeholder="Nome Item" class="form-control" aria-describedby="basic-addon1"><br/>
 					<form method="post" action="../controller/gerenciaControle.php">
+						<span class="input-group-addon" id="basic-addon1">Nome Item</span>
+						<input type="text" name="nomeItem" placeholder="Nome Item" class="form-control" aria-describedby="basic-addon1" required/><br/>
 						<span class="input-group-addon" id="basic-addon1">Descricao</span>
 						<textarea class="form-control" rows="5" name="descricao" aria-describedby="basic-addon1"></textarea>
 						<br/>
 						<span class="input-group-addon" id="basic-addon1">Destinatario</span>
-						<input type="text" name="destinatario" placeholder="Nome Destinatario" class="form-control" aria-describedby="basic-addon1">
+						<input type="text" name="destinatario" placeholder="Nome Destinatario" class="form-control" aria-describedby="basic-addon1" required/>
 
 						<div class="input-group">
 							<span class="input-group-addon" id="basic-addon1">Volume Item</span>
-							<input type="number" name="volume" class="form-control" aria-describedby="basic-addon1">
+							<input type="number" min="1" max="970" name="volume" class="form-control" aria-describedby="basic-addon1" required/>
 
 							<span class="input-group-addon" id="basic-addon1">Quantidade</span>
-							<input type="number" name="quantidade" class="form-control" aria-describedby="basic-addon1">
+							<input type="number" min="1" max="270" name="quantidade" class="form-control" aria-describedby="basic-addon1" value="1">
 
 							<span class="input-group-addon" id="basic-addon1">Destino</span>
 							<select class="form-control" name="destino">
